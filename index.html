@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BREAK9 AI Solutions - Central Valley's AI Experts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #171717;
+            background: #f9fafb;
+            overflow-x: hidden;
+        }
+        
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #171717 0%, #111827 50%, #374151 100%);
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(52, 211, 153, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(168, 85, 247, 0.05) 0%, transparent 50%);
+            animation: pulse-gradient 8s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulse-gradient {
+            0% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: hero-fade-in 1.2s ease-out;
+        }
+        
+        @keyframes hero-fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-logo {
+            margin-bottom: 3rem;
+            animation: logo-float 3s ease-in-out infinite;
+        }
+        
+        .hero-logo img {
+            height: 60px;
+            width: auto;
+        }
+        
+        @keyframes logo-float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #ffffff 0%, #60a5fa 50%, #34d399 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: text-shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes text-shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .hero .subtitle {
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+            font-weight: 400;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            padding: 1.25rem 2.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+            animation: cta-pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes cta-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px -5px rgba(59, 130, 246, 0.6);
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        }
+        
+        .hero-stats {
+            margin-top: 4rem;
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+            animation: stat-fade-in 1.5s ease-out;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #60a5fa;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        @keyframes stat-fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .services {
+            padding: 8rem 2rem;
+            background: #f9fafb;
+        }
+        
+        .services-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .services-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .services-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: #171717;
+            margin-bottom: 1rem;
+        }
+        
+        .services-header p {
+            font-size: 1.25rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 50%, #34d399 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #171717;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card p {
+            color: #6b7280;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .service-features {
+            list-style: none;
+        }
+        
+        .service-features li {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #16a34a;
+            font-weight: bold;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #111827 0%, #171717 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-section h2 {
+            font-size: clamp(2rem, 3.5vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 3rem;
+        }
+        
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            animation: float-animation 6s ease-in-out infinite;
+        }
+        
+        .floating-element:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-element:nth-child(2) {
+            top: 20%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+        
+        .floating-element:nth-child(3) {
+            bottom: 30%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        
+        @keyframes float-animation {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 6rem 1rem;
+                min-height: 80vh;
+            }
+            
+            .hero-stats {
+                gap: 2rem;
+                margin-top: 3rem;
+            }
+            
+            .services {
+                padding: 4rem 1rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .service-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .cta-section {
+                padding: 4rem 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-card {
+                margin: 0;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="floating-element">🤖</div>
+        <div class="floating-element">⚡</div>
+        <div class="floating-element">🎯</div>
+        
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="https://break9.com/assets/BREAK9logo%20(2)%20(1)-MSXYpgJd.svg" alt="BREAK9 Logo">
+            </div>
+            
+            <h1>AI That Actually Works for Central Valley Businesses</h1>
+            
+            <p class="subtitle">
+                We build custom AI systems that directly increase revenue, reduce labor costs, and remove the bottlenecks slowing your business down. No fluff, just results.
+            </p>
+            
+            <a href="#services" class="cta-button">Get Your Free AI Audit</a>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Local Businesses Served</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">$2M+</span>
+                    <span class="stat-label">Client ROI Generated</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">AI Automation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="services-container">
+            <div class="services-header">
+                <h2>AI Solutions That Drive Results</h2>
+                <p>We don't just consult. We deliver custom AI systems built specifically for your business needs.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🧠</div>
+                    <h3>Custom AI Systems</h3>
+                    <p>Tailored AI solutions designed to solve your specific business challenges and automate complex processes.</p>
+                    <ul class="service-features">
+                        <li>Business process automation</li>
+                        <li>Custom machine learning models</li>
+                        <li>Integration with existing systems</li>
+                        <li>ROI-focused implementation</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI Agents & Chatbots</h3>
+                    <p>Intelligent agents that handle customer service, lead qualification, and support tasks 24/7.</p>
+                    <ul class="service-features">
+                        <li>Customer service automation</li>
+                        <li>Lead qualification & nurturing</li>
+                        <li>Multi-channel deployment</li>
+                        <li>Human handoff capabilities</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Process Automation</h3>
+                    <p>Eliminate repetitive tasks and streamline workflows with intelligent automation solutions.</p>
+                    <ul class="service-features">
+                        <li>Workflow optimization</li>
+                        <li>Document processing</li>
+                        <li>Data entry automation</li>
+                        <li>Quality control systems</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Business Intelligence</h3>
+                    <p>AI-powered analytics and reporting that turn your data into actionable business insights.</p>
+                    <ul class="service-features">
+                        <li>Predictive analytics</li>
+                        <li>Real-time dashboards</li>
+                        <li>Automated reporting</li>
+                        <li>Performance optimization</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>Marketing Automation</h3>
+                    <p>AI-driven marketing campaigns that personalize customer experiences and maximize conversions.</p>
+                    <ul class="service-features">
+                        <li>Personalized campaigns</li>
+                        <li>Customer segmentation</li>
+                        <li>Content optimization</li>
+                        <li>Performance tracking</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🔒</div>
+                    <h3>AI Implementation & Support</h3>
+                    <p>Full lifecycle support from strategy and deployment to training and ongoing optimization.</p>
+                    <ul class="service-features">
+                        <li>Strategic AI planning</li>
+                        <li>System deployment</li>
+                        <li>Team training</li>
+                        <li>Ongoing optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Business with AI?</h2>
+            <p>Join 50+ Central Valley businesses already using AI to increase revenue and reduce costs. Get your free consultation today.</p>
+            <a href="#contact" class="cta-button">Schedule Your Free AI Consultation</a>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(50px)';
+            card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+            observer.observe(card);
+        });
+
+        const subtitle = document.querySelector('.hero .subtitle');
+        const originalText = subtitle.textContent;
+        subtitle.textContent = '';
+        
+        let i = 0;
+        function typeText() {
+            if (i < originalText.length) {
+                subtitle.textContent += originalText.charAt(i);
+                i++;
+                setTimeout(typeText, 50);
+            }
+        }
+        
+        setTimeout(typeText, 800);
+    </script>
+</body>
+</html>
